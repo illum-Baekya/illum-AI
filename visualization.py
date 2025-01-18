@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error
-
+from statsmodels.tsa.stattools import adfuller
 # 시각화 함수 정의
 def plot_ts(data, color, alpha, label):
     
     plt.figure(figsize=(11,5))
     plt.plot(data, color=color, alpha=alpha, label=label)
-    plt.title("총 인구수 시계열 예측")
-    plt.ylabel('총 인구수')
+    plt.title("Clockwise Prediction of Total Population")
+    plt.ylabel('Total Population')
     plt.legend()
     plt.show()
 
@@ -65,4 +65,3 @@ def plot_and_error(data, forecast):
     plt.legend()
     plt.show()
 
-plot_and_error(total_population.loc[:, "서울특별시  (1100000000)"][1:], forecast1)
